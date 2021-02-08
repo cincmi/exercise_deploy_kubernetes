@@ -5,4 +5,4 @@ metadata:
   namespace: imartinez
 data:
   hello_world:
-    <html><body>Hello from the postStart handler<body></html>
+    "<html><body>Hello from the postStart handler<body></html>"
