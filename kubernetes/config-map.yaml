@@ -1,0 +1,8 @@
+kind: ConfigMap 
+apiVersion: v1 
+metadata:
+  name: hello-world-configmap
+  namespace: imartinez
+data:
+  hello_world:
+    <html><body>Hello from the postStart handler<body></html>
