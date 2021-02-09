@@ -18,27 +18,16 @@ spec:
       containers:
       - name: nginx
         image: nginx:latest
-        # envFrom:
-        # - configMapRef:
-        #     name: hello-world-configmap
         ports:
-        - containerPort: 80
-        # lifecycle:
-        #   postStart:
-        #     exec:
-        #       command: ["/bin/sh", "-c", "echo '<html><body>Hello from the postStart handler<body></html>' > /usr/share/nginx/html/index.html"]
+          - containerPort: 80
         volumeMounts:
-        - name: html
-         mountPath: "/usr/share/nginx/html/"
-         readOnly: true
+          - mountPath: /usr/share/nginx/html/index.html
+            name: html
+            subPath: index.html
       volumes:
        - name: html
          configMap:
            name: hello-world-configmap
-           # An array of keys from the ConfigMap to create as files
-           items:
-           - key: "hello_world"
-             path: "index.html"
             
 apiVersion: v1
 kind: Service
