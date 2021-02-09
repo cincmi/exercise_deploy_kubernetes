@@ -4,4 +4,5 @@ metadata:
   name: hello-world-configmap
   namespace: imartinez
 data:
-  <html><body>Hello from the postStart handler<body></html>
+  hello_world:
+    <html><body>Hello from the postStart handler<body></html>
